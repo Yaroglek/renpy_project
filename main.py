@@ -1,0 +1,2 @@
+pinis = "pinis"
+print(pinis)
