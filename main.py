@@ -1,2 +1,0 @@
-her = "her"
-print("hereher")
