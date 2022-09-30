@@ -1,2 +1,2 @@
-radist = "loh"
-print(radist)
+nigger = 'deb'
+print(nigger)
