@@ -1,2 +1,2 @@
-her = "radik"
-print(her)
+radist = "loh"
+print(radist)
