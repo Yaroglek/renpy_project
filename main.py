@@ -1,4 +1,4 @@
 nigga = 'deb'
-text = 'pablo'
+text = 'pinis'
 print(nigga)
 print(text)
