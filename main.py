@@ -1,2 +1,2 @@
-nigger = 'deb'
-print(nigger)
+nigga = 'deb'
+print(nigga)
