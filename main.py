@@ -1,2 +1,2 @@
-her = "penis"
+her = "radik"
 print(her)
