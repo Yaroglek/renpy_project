@@ -26,7 +26,7 @@ label start:
 
     hide eileen
 
-    eileen "где я?"
+    eileen "где я"
 
     show snoop at right
 
