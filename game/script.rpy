@@ -1,7 +1,9 @@
-﻿# Вы можете расположить сценарий своей игры в этом файле.
+﻿init:
+    image snoop = "snoop-dogg.png"
 
 # Определение персонажей игры.
-define e = Character('Эйлин', color="#c8ffc8")
+define eileen = Character('Эйлин', color = "#c8ffc8")
+define snoop = Character('Снуп Дог', color = "#c8ffc8")
 
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
@@ -14,9 +16,20 @@ label start:
     scene bg room
 
     show eileen happy
+    eileen "Вы создали новую игру Ren'Py."
 
-    e "Вы создали новую игру Ren'Py."
+    eileen "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
 
-    e "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
+    show eileen at left
+
+    eileen "Хехе"
+
+    hide eileen
+
+    eileen "где я?"
+
+    show snoop at right
+
+    snoop "Бля у меня чето с фоном проблемы"
 
     return
