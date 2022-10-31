@@ -1,5 +1,6 @@
 ﻿init:
-    image snoop = "snoop-dogg.png"
+    image snoop = "snop.png"
+    image bg radik = "radik.png"
 
 # Определение персонажей игры.
 define eileen = Character('Эйлин', color = "#c8ffc8")
@@ -27,9 +28,10 @@ label start:
     hide eileen
 
     eileen "где я"
+    scene bg radik
 
-    show snoop at right
+    show snoop
 
-    snoop "Бля у меня чето с фоном проблемы"
+    snoop "Поступайте в радик учиться, пацаны)"
 
     return
