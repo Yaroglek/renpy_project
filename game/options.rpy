@@ -63,6 +63,7 @@ define config.has_voice = True
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
 define config.main_menu_music = "music/menu_theme.mp3"
+define audio.huefon = "music/huefon.mp3"
 
 
 ## Переходы ####################################################################
