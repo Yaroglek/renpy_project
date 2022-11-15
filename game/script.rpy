@@ -50,7 +50,7 @@ label start:
     ###
 
     ### Boss office scene
-    scene boss_office
+    scene boss_office with fade
 
     show boss at center with dissolve
 
@@ -108,16 +108,17 @@ label start:
 
     oleg "Вас понял, до свидания."
 
-    show black_screen with fade
+    scene black_screen with fade
 
     oleg_thoughts "(По всей видимости, это самое серьезное дело, за которое я брался)"
     oleg_thoughts "(Нужно не ударить в грязь лицом)"
 
-    ### Active Scene
 
+    ### Active Scene
+    
 
     ### Clown scene
-    show office with fade
+    scene office with fade
 
     oleg_thoughts "(Ладно, теперь надо осмотреться здесь. Пойду-ка я поищу свое рабочее мес...)"
 
@@ -144,7 +145,7 @@ label start:
     hide clown
 
     ### Rat Scene.
-    show office2 with fade
+    scene office2 with fade
     oleg_thoughts "(Хорошо, вот и первое знакомство. Теперь уже точно мне сле...)"
 
     "???" "Только познакомились, а он уже на 'ты'. Какое непрофессиональное поведение. Впрочем, как обычно..."
@@ -182,6 +183,8 @@ label start:
     rat "До встречи."
 
     oleg_thoughts "(Мда, начальник дал довольно точную характеристику этого Сергея)"
+
+
 
     show radik
     show snop
