@@ -214,7 +214,7 @@ label start:
 
     hide worker with dissolve
 
-    # Active scene
+    # active scene
     with fade
 
     oleg_thoughts "(Так, ладно, пора за работу)"
@@ -226,7 +226,7 @@ label start:
     oleg_thoughts "(Кажется, Иван Михайлович забыл сказать, какое именно у меня прикрытие...)"
     oleg_thoughts "(Ладно, надо что-нибудь придумать. Не болтать же мне целый день с коллегами)"
 
-    show active with dissolve 
+    show active with dissolve
 
     active "Привет! Извини, что отвлекаю от работы."
     active "Меня зовут Катя, я менеджер-логист."
@@ -253,7 +253,7 @@ label start:
     active "Осталось только придумать, что же это будет..."
     active "Ладно, не буду отвлекать от твоих программ. Пока!"
 
-    
+
 
     #Outro
     show radik with fade
