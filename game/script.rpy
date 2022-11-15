@@ -186,6 +186,9 @@ label start:
 
     worker "Ох бляяя, заебался я работать. Пиздец, сейчас бы поесть риса с курицей и поспать..."
 
+
+
+
     #Outro
     show radik with fade
     show snop with dissolve
