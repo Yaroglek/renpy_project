@@ -19,8 +19,8 @@ define boss = Character('Иван Михайлович', color = "#beffbe")
 define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
 define worker = Character('Геннадий', color = "#befff1")
+define active = Character('Екатерина', color = "#befff1")
 define snop = Character('snoop', color = "#befff1")
-
 
 # Игра начинается здесь:
 label start:
@@ -86,8 +86,7 @@ label start:
     boss "Она ответственна за большинство мероприятий по тимбилдингу. Именно благодаря ей, коллектив у нас, за некоторым исключением, довольно дружный."
     hide active
 
-    with fade
-    show boss at center
+    show boss at center with fade
 
     boss "Что же, вроде рассказал Вам, Олег Евгеньевич, все, что знал."
     boss "Я руковожу этим отделом не так давно, и поэтому не настолько хорошо знаю своих людей, чтобы делать какие-то выводы самому."
