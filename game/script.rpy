@@ -18,8 +18,9 @@ define oleg_thoughts = Character('Олег', color = "#2a28be")
 define boss = Character('Иван Михайлович', color = "#beffbe")
 define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
+define worker = Character('Геннадий', color = "#befff1")
+define active = Character('Екатерина', color = "#befff1")
 define snop = Character('snoop', color = "#befff1")
-
 
 # Игра начинается здесь:
 label start:
@@ -68,6 +69,7 @@ label start:
 
     show clown at right with dissolve
     boss "Первым в списке подозреваемых находится Анатолий. Довольно веселый и жизнерадостный человек, легок в общении."
+    # Шутняра по жизни
     hide clown
 
     show rat at right with dissolve
@@ -108,7 +110,7 @@ label start:
 
 
     ### Active Scene
-
+    
 
     ### Clown scene
     scene office with fade
@@ -149,10 +151,10 @@ label start:
 
     rat "Моё имя Сергей, будем знакомы."
     rat "К сожалению, большинство сотрудников здесь придерживаются подобного неформального стиля общения."
-
+    
     menu:
         rat "Как по мне, это пагубно влияет на рабочую атмосферу, Вы не согласны?"
-        "Полностью согласен":
+        "Полностью согласен":  
             oleg "Эм, да, конечно, это крайне непрофессионально, я полностью с Вами согласен."
             rat "Рад это слышать."
             rat "В этом месте наблюдается критическая нехватка адекватных работников."
@@ -168,6 +170,7 @@ label start:
             rat "Смею напомнить: платить Вам будут не за пустую болтовню."
             rat "Очень жаль. Я думал, что с Вашим приходом, здесь начнутся перемены."
             oleg_thoughts "(Отлично. Первый день, и я уже успел с кем-то поссориться)"
+            oleg_thoughts "(Хотя, трудно было не )"
             $ rat_points -= 1
 
     rat "Хорошо, не буду больше задерживать, у Вас сегодня много дел."
@@ -175,8 +178,10 @@ label start:
 
     oleg_thoughts "(Мда, начальник дал довольно точную характеристику этого Сергея)"
 
+
+
     show radik
     show snop
-    snop "Продолжение следует..."
+    snop "Братик, лучше бы в феникса поиграл, ей-Богу"
 
     return
