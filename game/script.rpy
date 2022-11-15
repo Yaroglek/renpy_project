@@ -255,7 +255,7 @@ label start:
 
 
 
-    #Outro
+    #outro
     show radik with fade
     show snop with dissolve
     snop "Продолжение следует..."
