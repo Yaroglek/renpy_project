@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 200: expected statement.
-    worker_points += 1
+File "game/script.rpy", line 249: expected statement.
+    active_points += 1
                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Nov 15 23:07:29 2022
+Tue Nov 15 23:23:10 2022
