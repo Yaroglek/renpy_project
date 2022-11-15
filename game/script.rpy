@@ -253,7 +253,7 @@ label start:
     active "Осталось только придумать, что же это будет..."
     active "Ладно, не буду отвлекать от твоих программ. Пока!"
 
-
+    #gnom
 
     #outro
     show radik with fade
