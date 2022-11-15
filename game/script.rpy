@@ -18,6 +18,7 @@ define oleg_thoughts = Character('Олег', color = "#2a28be")
 define boss = Character('Иван Михайлович', color = "#beffbe")
 define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
+define worker = Character('Геннадий', color = "#befff1")
 define snop = Character('snoop', color = "#befff1")
 
 
