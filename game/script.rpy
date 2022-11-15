@@ -6,6 +6,8 @@
     image clown = "clown.png"
     image rat = "rat.png"
     image rat_blur = "rat_blur.png"
+    image radik = "radik.png"
+    image snop = "snop.png"
 
 ### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
 
@@ -16,6 +18,7 @@ define oleg_thoughts = Character('Олег', color = "#2a28be")
 define boss = Character('Иван Михайлович', color = "#beffbe")
 define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
+define snop = Character('snoop', color = "#befff1")
 
 # Игра начинается здесь:
 label start:
@@ -143,5 +146,9 @@ label start:
     rat "Тогда не буду больше отвлекать, желаю удачи Вам."
 
     oleg_thoughts "(Мда, начальник дал довольно точную характеристику этого Сергея)"
+
+    show radik
+    show snop
+    snop "Братик, лучше бы в феникса поиграл, ей-Богу"
 
     return
