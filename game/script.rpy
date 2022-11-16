@@ -8,6 +8,8 @@
     image rat = "rat.png"
     image radik = "radik.png"
     image snop = "snop.png"
+    image home = "home.png"
+    image active = "active.png"
 
 ### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
 
@@ -30,7 +32,6 @@ label start:
     $ clown_points = 0
     $ rat_points = 0
     $ worker_points = 0
-    $ _x5_points = 0
 
     play music huefon
 
@@ -146,7 +147,7 @@ label start:
 
     show rat at center with moveinright
 
-    ### Крыса будет обращаться по имени отчеству или просто по имени, но на Вы?
+    ### Крыса будет обращаться по имени отчеству или просто по имени, но на Вы
     rat "Моё имя Сергей, будем знакомы."
     rat "К сожалению, большинство сотрудников здесь придерживаются подобного неформального стиля общения."
 
@@ -252,7 +253,10 @@ label start:
     active "Ладно, не буду отвлекать от твоих программ. Пока!"
 
     #home scene
-
+    scene black_screen with fade
+    "{color=#00ff00}Вечер того же дня{/color}"
+    scene home with fade
+    oleg_thoughts ""
     #outro
     show radik with fade
     show snop with dissolve
