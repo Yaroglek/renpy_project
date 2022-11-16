@@ -32,18 +32,22 @@ label start:
     $ clown_points = 0
     $ rat_points = 0
     $ worker_points = 0
-
-    play music huefon
-
-    centered "Вы ведущий специалист информационной безопасности в крупной фирме, специализирующейся на перевозке грузов. Сегодня к вам обратилось руководство с поручением выявить виновного в утечке важных данных ."
-
+    stop music
+    play sound pechat
+    centered "Вы ведущий специалист информационной безопасности в крупной фирме, специализирующейся на перевозке грузов. Сегодня к вам обратилось руководство с поручением выявить виновного в утечке важных данных."
+    stop sound
+    play sound pechat
     centered "Вас, под видом обычного сотрудника, внедряют в отдел, где работает подозреваемый. Вы должны, полагаясь на дедуктивный метод, выявить причастного к сливу данных."
-
+    stop sound
+    play sound pechat
     centered "От вас зависит дальнейшая судьба всей компании. Приступайте к расследованию."
-
-    centered "{size=+20}Барнаул, Алтайский край{/size}"
-
-    centered "{size=+20}{color=#00ff00} сентября 2022 года{/size}{/color}"
+    stop sound
+    play sound pechat
+    centered "{size=+20}{color=#00ff00}Барнаул, Алтайский край{/size}{/color}"
+    stop sound
+    play sound pechat
+    centered "{size=+20}{color=#00ff00} 11 сентября 2022 года{/size}{/color}"
+    stop sound
 
 
     ###
@@ -51,6 +55,7 @@ label start:
     ###
 
     ### Boss office scene
+    play music huefon
     scene boss_office with fade
 
     show boss at center with dissolve
