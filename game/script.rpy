@@ -33,7 +33,7 @@ label start:
     $ clown_points = 0
     $ rat_points = 0
     $ worker_points = 0
-
+    stop music
     centered "Вы ведущий специалист информационной безопасности в крупной фирме, специализирующейся на перевозке грузов. Сегодня к вам обратилось руководство с поручением выявить виновного в утечке важных данных."
     centered "Вас, под видом обычного сотрудника, внедряют в отдел, где работает подозреваемый. Вы должны, полагаясь на дедуктивный метод, выявить причастного к сливу данных."
     centered "От вас зависит дальнейшая судьба всей компании. Приступайте к расследованию."
@@ -45,6 +45,7 @@ label start:
     ###
 
     ### Boss office scene
+
     play music huefon
     scene boss_office with fade
 
@@ -158,6 +159,7 @@ label start:
             $ rat_points += 1
         "Не согласен":
             oleg "На самом деле, я не думаю, что это как-то может навредить работе."
+            hide rat
             show rat_angry at center
             rat "Я смотрю, Вы уже пообщались с Екатериной. Подобное отношение как раз в её духе."
             rat "Смею напомнить: платить Вам будут не за пустую болтовню."
@@ -168,7 +170,7 @@ label start:
     rat "Хорошо, не буду больше задерживать, у Вас сегодня много дел."
     rat "До встречи."
 
-    hide rat
+    hide rat_angry
     scene black_screen
     with fade
 
@@ -177,7 +179,7 @@ label start:
     # worker Scene
 
     scene office2 with fade
-    show worker at center with pixellate
+    show worker at center with fade
 
     worker "Да уж, ну и денек сегодня..."
     worker "О, ты тот новенький! Кажется, тебя зовут Олег, да?"
@@ -236,7 +238,7 @@ label start:
         "Какой программист?":
             oleg "Какой программист? Не знаю таких."
             active "..."
-            active "Ха, ну ты и шутник!"
+            active "Ха-ха, ну ты и шутник!"
             active "Если бы ты не был новым программистом, тебя бы просто не пустили сюда."
             active "Кажется, у Толи появился соперник за звание лучшего юмориста отдела логистики!"
             $ active_points += 1
@@ -254,6 +256,6 @@ label start:
     #outro
     show radik with fade
     show shelb with dissolve
-    shelb "Поступайте в fockin' радик учиться пацаны"
+    shelb "Продолжение следует..."
 
     return
