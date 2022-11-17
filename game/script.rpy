@@ -7,10 +7,11 @@
     image clown = "clown.png"
     image rat = "rat.png"
     image radik = "radik.png"
-    image snop = "snop.png"
+    image shelb = "shelby.png"
     image home = "home.png"
     image active = "active.png"
     image rat_angry = "rat_angry.png"
+
 ### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
 
 # Определение персонажей игры.
@@ -22,7 +23,7 @@ define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
 define worker = Character('Геннадий', color = "#befff1")
 define active = Character('Екатерина', color = "#befff1")
-define snop = Character('snoop', color = "#befff1")
+define shelb = Character('shelby', color = "#befff1")
 
 # Игра начинается здесь:
 label start:
@@ -252,7 +253,7 @@ label start:
     oleg_thoughts ""
     #outro
     show radik with fade
-    show snop with dissolve
-    snop "Продолжение следует..."
+    show shelb with dissolve
+    shelb "Поступайте в fockin' радик учиться пацаны"
 
     return
