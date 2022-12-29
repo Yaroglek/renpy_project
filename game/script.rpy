@@ -104,8 +104,6 @@ label start:
     oleg_thoughts "(По всей видимости, это самое серьезное дело, за которое я брался)"
     oleg_thoughts "(Нужно не ударить в грязь лицом)"
 
-    ### active Scene
-
     ### clown Scene
     scene office with fade
 
