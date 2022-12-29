@@ -8,9 +8,10 @@
     image rat = "rat.png"
     image radik = "radik.png"
     image snop = "snop.png"
-    image home = "homPe.png"
+    image home = "home.png"
     image active = "active.png"
     image rat_angry = "rat_angry.png"
+
 ### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
 
 # Определение персонажей игры.
@@ -22,7 +23,7 @@ define clown = Character('Толя', color = "#befff1")
 define rat = Character('Сергей', color = "#befff1")
 define worker = Character('Геннадий', color = "#befff1")
 define active = Character('Екатерина', color = "#befff1")
-define snop = Character('snoop', color = "#befff1")
+define shelb = Character('shelby', color = "#befff1")
 
 # Игра начинается здесь:
 label start:
@@ -32,7 +33,7 @@ label start:
     $ clown_points = 0
     $ rat_points = 0
     $ worker_points = 0
-
+    stop music
     centered "Вы ведущий специалист информационной безопасности в крупной фирме, специализирующейся на перевозке грузов. Сегодня к вам обратилось руководство с поручением выявить виновного в утечке важных данных."
     centered "Вас, под видом обычного сотрудника, внедряют в отдел, где работает подозреваемый. Вы должны, полагаясь на дедуктивный метод, выявить причастного к сливу данных."
     centered "От вас зависит дальнейшая судьба всей компании. Приступайте к расследованию."
@@ -44,6 +45,7 @@ label start:
     ###
 
     ### Boss office scene
+
     play music huefon
     scene boss_office with fade
 
@@ -157,11 +159,14 @@ label start:
             $ rat_points += 1
         "Не согласен":
             oleg "На самом деле, я не думаю, что это как-то может навредить работе."
+            hide rat
             show rat_angry at center
             rat "Я смотрю, Вы уже пообщались с Екатериной. Подобное отношение как раз в её духе."
             rat "Смею напомнить: платить Вам будут не за пустую болтовню."
             rat "Очень жаль. Я думал, что с Вашим приходом, здесь начнутся перемены."
             oleg_thoughts "(Отлично. Первый день, и я уже успел с кем-то поссориться)"
+            hide rat_angry
+            show rat
             $ rat_points -= 1
 
     rat "Хорошо, не буду больше задерживать, у Вас сегодня много дел."
@@ -176,7 +181,7 @@ label start:
     # worker Scene
 
     scene office2 with fade
-    show worker at center with pixellate
+    show worker at center with fade
 
     worker "Да уж, ну и денек сегодня..."
     worker "О, ты тот новенький! Кажется, тебя зовут Олег, да?"
@@ -235,7 +240,7 @@ label start:
         "Какой программист?":
             oleg "Какой программист? Не знаю таких."
             active "..."
-            active "Ха, ну ты и шутник!"
+            active "Ха-ха, ну ты и шутник!"
             active "Если бы ты не был новым программистом, тебя бы просто не пустили сюда."
             active "Кажется, у Толи появился соперник за звание лучшего юмориста отдела логистики!"
             $ active_points += 1
@@ -256,7 +261,7 @@ label start:
     
     #outro
     show radik with fade
-    show snop with dissolve
-    snop "Продолжение следует..."
+    show shelb with dissolve
+    shelb "Продолжение следует..."
 
     return
