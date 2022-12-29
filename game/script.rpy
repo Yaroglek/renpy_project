@@ -8,7 +8,7 @@
     image rat = "rat.png"
     image radik = "radik.png"
     image snop = "snop.png"
-    image home = "home.png"
+    image home = "homPe.png"
     image active = "active.png"
     image rat_angry = "rat_angry.png"
 ### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
@@ -37,7 +37,7 @@ label start:
     centered "Вас, под видом обычного сотрудника, внедряют в отдел, где работает подозреваемый. Вы должны, полагаясь на дедуктивный метод, выявить причастного к сливу данных."
     centered "От вас зависит дальнейшая судьба всей компании. Приступайте к расследованию."
     centered "{size=+20}{color=#00ff00}Барнаул, Алтайский край{/size}{/color}"
-    centered "{size=+20}{color=#00ff00} 11 сентября 2022 года{/size}{/color}"
+    centered "{size=+20}{color=#00ff00} 11 сентября 2022 года, 9:00{/size}{/color}"
 
     ###
     # DAY 1
@@ -247,9 +247,13 @@ label start:
 
     #home scene
     scene black_screen with fade
+
     centered "{color=#00ff00}Вечер того же дня{/color}"
+
     scene home with fade
+
     oleg_thoughts ""
+    
     #outro
     show radik with fade
     show snop with dissolve
