@@ -4,12 +4,19 @@
     image office2 = "office2.jpg"
     image black_screen = "black_screen.jpg"
     image boss = "boss.png"
+    image boss_r = "boss_rot.png"
     image clown = "clown.png"
+    image clown_r = "clown_rot.png"
     image rat = "rat.png"
+    image rat_r = "rat_rot.png"
+    image active = "active.png"
+    image active_r = "active_rot.png"
+    image worker = "worker.png"
+    image worker_r = "worker_rot.png"
     image radik = "radik.png"
     image snop = "snop.png"
     image home = "home.png"
-    image active = "active.png"
+
     image rat_angry = "rat_angry.png"
     image shelb = "shelby.png"
 
@@ -30,7 +37,6 @@ label start:
 
     # Очки отношений
     $ active_points = 0
-    $ clown_points = 0
     $ rat_points = 0
     $ worker_points = 0
     stop music
@@ -377,7 +383,16 @@ label second_day:
     show office with fade
 
     show active at left with dissolve
+    active "Наш коллектив нуждается в этом!"
+
     show worker at right with dissolve
+    worker "У нас нет времени на эту чушь!"
+
+    oleg "Всем здрасьте, что тут происходит?"
+    worker "Она опять лезет ко всем со своими идиотскими идеями!"
+    active "Никакие они не идиотские!"
+
+
 
 
 
