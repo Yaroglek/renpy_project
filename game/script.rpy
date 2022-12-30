@@ -261,7 +261,7 @@ label start:
     scene black_screen with fade
 
     play music pechat
-    centered "{color=#00ff00}12 сентября 2022 года, 9:00{{/color}"
+    centered "{color=#00ff00}12 сентября 2022 года, 9:00{/color}"
     stop music
 
     scene home with fade
