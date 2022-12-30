@@ -65,6 +65,7 @@ define config.has_voice = True
 define config.main_menu_music = "music/menu_theme.mp3"
 define audio.huefon = "music/huefon.mp3"
 define audio.pechat = "music/pechat.mp3"
+define audio.comp = "music/comp.mp3"
 
 
 ## Переходы ####################################################################
