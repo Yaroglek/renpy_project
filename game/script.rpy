@@ -1,28 +1,4 @@
-﻿init:
-    image boss_office = "boss_office.jpg"
-    image office = "office.jpg"
-    image office2 = "office2.jpg"
-    image black_screen = "black_screen.jpg"
-    image boss = "boss.png"
-    image boss_r = "boss_rot.png"
-    image clown = "clown.png"
-    image clown_r = "clown_rot.png"
-    image rat = "rat.png"
-    image rat_r = "rat_rot.png"
-    image active = "active.png"
-    image active_r = "active_rot.png"
-    image worker = "worker.png"
-    image worker_r = "worker_rot.png"
-    image radik = "radik.png"
-    image snop = "snop.png"
-    image home = "home.png"
-
-    image rat_angry = "rat_angry.png"
-    image shelb = "shelby.png"
-
-### Запись _something_ обозначает, что надо придумать что-то и вставить сюда
-
-# Определение персонажей игры.
+﻿# Определение персонажей игры.
 define oleg = Character('Олег', color = "#8280ff")
 define oleg_thoughts = Character('Олег', color = "#2a28be")
 define boss = Character('Иван Михайлович', color = "#beffbe")
@@ -31,6 +7,38 @@ define rat = Character('Сергей', color = "#befff1")
 define worker = Character('Геннадий', color = "#befff1")
 define active = Character('Екатерина', color = "#befff1")
 define shelb = Character('shelby', color = "#befff1")
+
+# "Гифки"
+image bossx:
+    "boss.png"
+    0.5
+    "boss_rot.png"
+    0.5
+    repeat
+image clownx:
+    "boss.png"
+    0.5
+    "boss_rot.png"
+    0.5
+    repeat
+image ratx:
+    "boss.png"
+    0.5
+    "boss_rot.png"
+    0.5
+    repeat
+image activex:
+    "boss.png"
+    0.5
+    "boss_rot.png"
+    0.5
+    repeat
+image workerx:
+    "boss.png"
+    0.5
+    "boss_rot.png"
+    0.5
+    repeat
 
 # Игра начинается здесь:
 label start:
@@ -48,7 +56,7 @@ label start:
     play sound pechatdate
     centered "{size=+20}{color=#00ff00}Барнаул, Алтайский край{/size}{/color}"
     play sound pechatdate
-    centered "{size=+20}{color=#00ff00} 11 сентября 2022 года, 8:00{/size}{/color}"
+    centered "{size=+20}{color=#00ff00} 11 сентября 2002 года, 8:00{/size}{/color}"
 
     jump first_day
 
@@ -75,7 +83,7 @@ label first_day:
     boss "Именно поэтому Вам необходимо найти виновного в утечке в ближайшее время."
     boss "Всего в этом отделе работает 5 человек, у которых есть доступ к слитой информации. Думаю, стоит описать Вам каждого из них."
 
-    show boss at left with fade
+    show boss at left with move
 
     show clown at right with dissolve
     boss "Первым в списке подозреваемых находится Анатолий. Довольно веселый и жизнерадостный человек, легок в общении."
@@ -173,7 +181,8 @@ label first_day:
             oleg "На самом деле, я не думаю, что это как-то может навредить работе."
             hide rat
             show rat_angry at center
-            rat "Я смотрю, Вы уже пообщались с Екатериной. Подобное отношение как раз в её духе."
+            rat "..."
+            rat "Вы меня несколько разочаровали."
             rat "Смею напомнить: платить Вам будут не за пустую болтовню."
             rat "Очень жаль. Я думал, что с Вашим приходом, здесь начнутся перемены."
             oleg_thoughts "(Отлично. Первый день, и я уже успел с кем-то поссориться)"
@@ -191,8 +200,10 @@ label first_day:
     oleg_thoughts "(Действительно, характер Сергея не из самых приятных...)"
 
     play sound pechatdate
-    centered "{color=#00ff00}11 сентября 2022 года, 12:00{/color}"
+    centered "{color=#00ff00}11 сентября 2002 года, 12:00{/color}"
     stop music
+
+    play music huefon
 
     ### worker scene
 
@@ -253,8 +264,8 @@ label first_day:
             active "Жаль, я опоздала немного на работу."
             active "Мы собирались все вместе встретить тебя и отметить пополнение коллектива в столовой!"
             active "Но ты, наверно, уже со всеми успел познакомиться, так что смысла в собрании уже нет."
-        "Какой программист?":
-            oleg "Какой программист? Не знаю таких."
+        "Программист?":
+            oleg "Программист? Ты сейчас про кого это?"
             active "..."
             active "Ха-ха, ну ты и шутник!"
             active "Если бы ты не был новым программистом, тебя бы просто не пустили сюда."
@@ -272,7 +283,7 @@ label first_day:
     scene black_screen with fade
 
     play music pechat
-    centered "{color=#00ff00}12 сентября 2022 года, 9:00{/color}"
+    centered "{color=#00ff00}11 сентября 2002 года, 21:00{/color}"
     stop music
 
     scene home with fade
@@ -293,7 +304,7 @@ label second_day:
 
     scene black_screen with fade
     play sound pechatdate
-    centered "{color=#00ff00}12 сентября 2022 года, 9:00{/color}"
+    centered "{color=#00ff00}12 сентября 2002 года, 8:30{/color}"
 
     play music huefon
 
@@ -307,6 +318,8 @@ label second_day:
     "Компьютер" "..."
     "Компьютер" "..."
     "Компьютер" "Программа успешно установлена"
+
+    play music huefon
 
     scene office2 with fade
     oleg_thoughts "(Все, готово, теперь нужно установить программу на компьютеры Анатолия и Сергея)"
@@ -334,7 +347,7 @@ label second_day:
 
         oleg "Иван Михайлович попросил меня проверить работоспособность всех компьютеров в офисе,"
         oleg "Чтобы, в случае поломки чего-либо, запросить новое оборудование."
-        hide rat_angry
+        hide rat_angry 
         show rat with dissolve
         rat "Хм, ладно, теперь понятно. Что ж, продолжайте проверку, не буду отвлекать."
         $ rat_points += 1
@@ -347,37 +360,25 @@ label second_day:
     else:
         oleg "..."
         rat "Отвечайте!"
-        menu:
-            "Антивирус":
-                oleg "Эм, да я вот проверял просто тут это, ну, антивирус в общем..."
-                rat "..."
-                rat "Убирайтесь прочь."
-                oleg_thoughts "(Надо успеть поставить программу!)"
-                "Компьютер" "..."
-                rat "Вы издеваетесь?!"
-                $ rat_points -= 1
-                "Компьютер" "Программа успешно установлена"
-                oleg_thoughts "(Всё!)"
-                oleg "Уже ухожу."
-                hide rat_angry
-            #мб исправить
-            "Не то место": 
-                oleg "Разве это не мой компьютер?"
-                oleg "Прошу прощения, я все еще плохо ориентируюсь здесь."
-                rat "Ваш компьютер находится в другой части офиса. Надеюсь, подобное больше не повториться."
-                oleg "Да конечно."
-                oleg_thoughts "(Ну давай, грузись быстрее!)"
-                rat "Вы все еще здесь?"
-                "Компьютер" "Программа успешно установлена"
-                oleg "Уже нет."
-
+        "Антивирус"
+        oleg "Эм, да я вот проверял просто тут это, ну, антивирус в общем..."
+        rat "..."
+        rat "Убирайтесь прочь."
+        oleg_thoughts "(Надо успеть поставить программу!)"
+        "Компьютер" "..."
+        rat "Вы издеваетесь?!"
+        $ rat_points -= 1
+        "Компьютер" "Программа успешно установлена"
+        oleg_thoughts "(Всё!)"
+        oleg "Уже ухожу."
+        hide rat_angry 
 
     ### conversation scene
 
     scene black_screen with fade
 
     play sound pechatdate
-    centered "{color=#00ff00}12 сентября 2022 года, 14:00{/color}"
+    centered "{color=#00ff00}12 сентября 2002 года, 14:00{/color}"
     stop music
 
     show office with fade
@@ -391,14 +392,95 @@ label second_day:
     oleg "Всем здрасьте, что тут происходит?"
     worker "Она опять лезет ко всем со своими идиотскими идеями!"
     active "Никакие они не идиотские!"
+    oleg "Что у вас произошло?"
+    active "Я предлагаю всем вместе поехать на природу в эти выходные."
+    active "Мы пообщаемся, узнаем друг друга получше. Короче говоря, укрепим дружеские связи и повысим моральный дух в команде!"
+    oleg "Звучит не так плохо."
+    worker "Ага, только у нас тут завал, ведь кое-кто, вместо того, чтобы работать, рассуждает о каких-то дружеских связях и морали."
+    worker "Мой дух был бы на высоте, еслы бы мне не приходилось задерживаться и доделывать чью-то работу."
+    active "Олег, посмотри на все эти унылые лица! Разве им не нужно немного развеяться?"
+    menu:
+        "Это пойдет на пользу":
+            oleg "Не вижу ничего плохого в этом мероприятии."
+            active "Вот так вот, двое против одного!"
+            $ active_points += 1
+            worker "Помимо нас тут работает еще куча людей. Их спросить не забыла?"
+            active "Ой, точно. Пойду поговорю с остальными."
+            hide active
+            worker "Ну и слава Богу, наконец-то можно спокойно поработать."
+            
+        "Работа важнее":
+            oleg "Мне кажется, стоит сначала разобраться с работой, прежде чем задумываться о какой-то сторонней деятельности."
+            worker "Дело говоришь."
+            active "Да это ведь только на пользу пойдет всему коллективу!"
+            worker "Тебе уже два человека сказали, что это чушь. Сделай дело - гуляй смело."
+            active "Понятно с вами все!"
+            hide active
+            $ worker_points += 1
+    
+    hide worker
 
+    oleg_thoughts "(Да уж, не самая приятная беседа получилась)"
+    oleg "(Ну, всякое бывает. Пожалуй, стоит пойти ""поработать"", чтобы ни у кого не было вопросов ко мне)"
 
+    ### home scene
+    scene black_screen with fade
 
+    play music pechat
+    centered "{color=#00ff00}12 сентября 2022 года, 21:00{/color}"
+    stop music
+
+    scene home with fade
+
+    oleg_thoughts "(Денек, конечно, не из легких выдался)"
+    oleg_thoughts "(Надеюсь, виновный в утечке не заставит себя долго ждать)"
+    oleg_thoughts "(И кто же, интересно, сделал это? Никто их всех этих подозреваемых не тянет на злостного вора)"
+    oleg_thoughts "(Ладно, пока что информации слишком мало, чтобы делать какие-то выводы. Сейчас стоит просто немного отдохнуть...)"
+
+    jump third_day
+
+    label third_day:
+
+    ###
+    # DAY 3
+    ###
+
+    ### boss scene
+
+    play music pechat
+    centered "{color=#00ff00}13 сентября 2002 года, 8:30{/color}"
+    stop music
+
+    play music huefon
+
+    scene boss_office with fade
+
+    show boss at center with dissolve
+
+    boss "Доброе утро, Олег Евгеньевич. Я рад, что Вы все таки смогли сегодня прийти пораньше. У меня для Вас есть важная информация."
+    oleg "Здравствуйте, Иван Михайлович. Как только я увидел Ваше ссобщение, я сразу направился сюда."
+    boss "Отлично."
+    boss "Вчера, как я понимаю, Вы установили на компьютеры всех подозреваемых программу, отслеживающую все действия по передаче данных? (# Изменить? #)"
+    oleg "Так точно, проблем с этим у меня практически не возникло."
+    boss "Хорошо. Тогда взгляните но это."
+    
+    with fade
+    
+    oleg "Это запись с камеры видеонаблюдения?"
+    boss "Именно. Вчера в 12 ночи, судя по полученным сведениям, была произведена очередная передача данных."
+    boss "И произведена она была с компьютера Сергея."
+    boss "Мы решили посмотреть запись с камеры, установленной в офисе, чтобы убедиться в том, что это именно он."
+    boss "Однако, как Вы можете видеть, на этой записи видно только как некто подходит к его компьютеру и начинает что-то в нем делать."
+    boss "Мы не можем быть на 100 процентов уверены, что это Сергей. Вчера в это время все четверо подозреваемых находились тут из-за скопившейся работы."
+
+    boss "Мы продолжим следить за деятельностью подозреваемых с помощью вашей программы, однака неизвестно, когда будет новая передача."
+    boss "Постарайтесь разузнать что-нибудь как можно скорее. Может быть, у кого-нибудь есть алиби."
+    oleg "устал писать, пойду спать"
 
 
     #outro
     show radik with fade
-    show shelb with dissolve
+    show shelby with dissolve
     shelb "La commedia e finita."
 
     return
