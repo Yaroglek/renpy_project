@@ -63,10 +63,11 @@ define config.has_voice = True
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
 define config.main_menu_music = "music/menu_theme.mp3"
-define audio.huefon = "music/huefon.mp3"
 define audio.pechat = "music/pechat.mp3"
 define audio.comp = "music/comp.mp3"
 define audio.pechatdate = "music/pechatdate.mp3"
+define audio.chinese = "music/chinese.mp3"
+define audio.fon = "music/fon.mp3"
 
 
 ## Переходы ####################################################################
