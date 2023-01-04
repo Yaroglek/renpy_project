@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 398: menu statement expects a non-empty block.
-    menu:
-        ^
-
-File "game/script.rpy", line 400: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    "Это пойдет на пользу":
-    ^
+File "game/script.rpy", line 61: expected end of line
+    stop music with fade
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Dec 31 05:12:30 2022
+Mon Jan  2 21:07:56 2023
