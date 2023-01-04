@@ -10,6 +10,7 @@ define rat = Character('Сергей', color = "#befff1")
 define worker = Character('Геннадий', color = "#befff1")
 define active = Character('Екатерина', color = "#befff1")
 define shelb = Character('shelby', color = "#befff1")
+define snop = Character('snop', color = "#befff1")
 
 # "Гифки"
 image bossx:
@@ -62,7 +63,7 @@ label start:
     $ renpy.pause(1.0)
     hide text with dissolve
     $ renpy.pause(0.5)
-    show text "Название Новеллы" with fade
+    show text "Название Новеллы" with dissolve
     $ renpy.pause(2.0)
     stop music
     hide text with fade
@@ -74,8 +75,6 @@ label start:
     stop music
     play sound pechatdate
     centered "{size=+20}{color=#00ff00}Барнаул, Алтайский край{/size}{/color}"
-    play sound pechatdate
-    centered "{size=+20}{color=#00ff00} 11 сентября 2002 года, 8:00{/size}{/color}"
 
     jump first_day
 
@@ -86,6 +85,8 @@ label first_day:
     ###
 
     ### Boss office scene
+    play sound pechatdate
+    centered "{size=+20}{color=#00ff00} 11 сентября 2002 года, 8:00{/size}{/color}"
 
     play music fon
     scene boss_office with fade
@@ -103,7 +104,7 @@ label first_day:
     show bossx
     boss "Да, конечно. Данный отдел занимается логистикой. Как Вы понимаете, информация, к которой есть доступ у моих сотрудников, крайне важна для компании."
     boss "Именно поэтому Вам необходимо найти виновного в утечке в ближайшее время."
-    boss "Всего в этом отделе работает 5 человек, у которых есть доступ к слитой информации. Думаю, стоит описать Вам каждого из них."
+    boss "Всего в этом отделе работает 4 человека, у которых есть доступ к слитой информации. Думаю, стоит описать Вам каждого из них."
     hide bossx
 
     show boss at left with move
@@ -160,6 +161,8 @@ label first_day:
     oleg_thoughts "(Нужно не ударить в грязь лицом)"
 
     ### clown Scene
+    play sound pechatdate
+    centered "{color=#00ff00} 11 сентября 2002 года, 8:30{/color}"
 
     scene office with fade
 
@@ -185,10 +188,16 @@ label first_day:
 
     show clownx
     clown "Иван Михайлович любит толкать речи. Он тот еще оратор, этого у него не отнять."
-    clown "Ладно, осваивайся тут потихоньку, а мне работать надо. Еще увидимся!"
+    clown "Ладно, осваивайся тут потихоньку, а я пойду кофе себе сделаю."
     hide clownx
 
-    oleg "До встречи."
+    oleg "Любишь кофе?"
+
+    show clownx
+    clown "А кто не любит? Я вообще целый день могу на одном только кофе прожить."
+    clown "Ну я пошел. Еще увидимся!"
+    hide clownx
+
     hide clown with dissolve
 
     oleg_thoughts "(Похоже, это был мой первый подозреваемый. И вправду, весьма позитивный человек)"
@@ -242,17 +251,12 @@ label first_day:
             hide rat_angry
             $ rat_points -= 1
 
-    scene black_screen with fade
-
     oleg_thoughts "(Отлично. Первый день, и я уже успел с кем-то поссориться)"
 
-    play sound pechatdate
-    centered "{color=#00ff00}11 сентября 2002 года, 12:00{/color}"
-    stop music
-
-    play music fon
-
     ### worker scene
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00} 11 сентября 2002 года, 12:00{/color}"
 
     scene office2 with fade
     show worker at center with fade
@@ -296,7 +300,11 @@ label first_day:
     oleg_thoughts "(По нему видно, что ему приходится нелегко. На нем лежит немало ответственности)"
 
     ### active scene
-    with fade
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00} 11 сентября 2002 года, 16:00{/color}"
+
+    scene office2 with fade
 
     oleg_thoughts "(Так, ладно, пора за работу)"
 
@@ -356,7 +364,7 @@ label first_day:
 
     oleg_thoughts "(Да уж, это был безумный день, но надо двигаться дальше)"
     oleg_thoughts "(Завтра предстоит поставить свою систему безопасности на все компьютеры в офисе, чтобы выявить крота)"
-    oleg_thoughts "(А сейчас стоить немного отдохнуть...)"
+    oleg_thoughts "(А сейчас стоит немного отдохнуть...)"
 
     jump second_day
 
@@ -548,7 +556,7 @@ label second_day:
     scene black_screen with fade
 
     play sound pechatdate
-    centered "{color=#00ff00}12 сентября 2022 года, 22:00{/color}"
+    centered "{color=#00ff00}12 сентября 2002 года, 22:00{/color}"
     stop music
 
     scene home with fade
@@ -557,7 +565,7 @@ label second_day:
     oleg_thoughts "(Точно, посмотрю-ка я свою программу, может что-нибудь удастся выявить...)"
     scene black_screen with fade
     play sound comp
-    "Компьютер" "(Звук включения)"
+    "Компьютер" "*Звук включения*"
     "Компьютер" "..."
     oleg_thoughts "А вот это уже интересно, кто-то залез в корпоративную сеть компании буквально полчаса назад."
     scene home with fade
@@ -566,7 +574,7 @@ label second_day:
 
     jump third_day
 
-    label third_day:
+label third_day:
 
     ###
     # DAY 3
@@ -588,7 +596,7 @@ label second_day:
     hide bossx
 
     oleg "Здравствуйте, Иван Михайлович. Да, вчера утром я установил свою программу, которая фиксирует активность в корпоративной сети компании."
-    oleg "Так вот, дело в том, что вчера поздно вечером она зафиксировала вторжение в сеть с рабочего компьютера Сергея."
+    oleg "Дело в том, что вчера поздно вечером она зафиксировала вторжение в сеть с рабочего компьютера Сергея."
 
     show bossx
     boss "Продолжайте."
@@ -617,15 +625,15 @@ label second_day:
     play sound pechatdate
     centered "{color=#00ff00}13 сентября 2002 года, 12:00{/color}"
     
-    show office with fade
+    scene office with fade
 
     show worker at left with dissolve
-    show workerx
+    show workerx at left
     worker "... а потом оказалось, что его сына повысили до ефрейтора!"
     hide workerx
 
     show rat at right with dissolve
-    show ratx
+    show ratx at right
     rat "Ничего себе! Жаль, что я пропустил эту серию."
     hide ratx
 
@@ -633,80 +641,396 @@ label second_day:
 
     oleg "Всем доброе утро, кого это повысили до ефрейтора?"
 
-    if rat_points >= 2:
-        show workerx
+    if worker_points >= 1:
+        show workerx at left
         worker "Да мы тут обсуждаем один сериал популярный. Каждый день по новой серии выходит."
-        worker "Вот, вчера была очень интерсная серия, кульминация всего сериала! А Сергей её пропустил."
-        hide workerx
-
-        oleg "Похоже, сериал действительно интересный. Стоит глянуть. Не подскажешь, во сколько начинается?"
-
-        show ratx
-        rat "В 9 вечера."
-        hide ratx
-    else:
-        show ratx
-        rat "Пойду-ка я отсюда, а то коллектив тут какой-то неприятный."
-        hide ratx
-
-        show workerx
-        worker "..."
-        worker "Без понятия, что на него нашло. Заработался вчера видимо."
-        hide workerx
-
-        oleg "Понимаю. Ну а что там по поводу сериала?"
-
-        show workerx
-        worker "Да мы тут обсуждали один сериал популярный. Каждый день по новой серии выходит."
         worker "Вот, вчера была очень интересная серия, кульминация всего сериала! А Сергей её пропустил."
         hide workerx
 
         oleg "Похоже, сериал действительно интересный. Стоит глянуть. Не подскажешь, во сколько начинается?"
 
-        show workerx
-        rat "В 9 вечера."
+        show workerx at left
+        worker "В 21:30."
         hide workerx
+        
+        oleg "Ладно, заболтался я тут. Пойду вернусь к работе, а то много дел навалилось."
+    else:
+        show workerx at left
+        worker "Пойду-ка я отсюда, а то коллектив тут какой-то неприятный."
+        hide workerx
+        hide worker
 
+        rat "..."
+        show ratx at right
+        rat "Без понятия, что на него нашло. Заработался вчера видимо."
+        hide ratx
 
-    oleg "Ладно, заболтался я тут. Пойду вернусь к работе, а то много дел навалилось."
+        oleg "Понимаю. Ну а что там по поводу сериала?"
 
-    scene black_screen with fade
-    oleg_thoughts "()"
+        show ratx at right
+        rat "Да мы тут обсуждали один сериал популярный. Каждый день по новой серии выходит."
+        rat "Вот, вчера была очень интересная серия, кульминация всего сериала! А Сергей её пропустил."
+        hide ratx
 
+        oleg "Похоже, сериал действительно интересный. Стоит глянуть. Не подскажешь, во сколько начинается?"
+        
+        $ rat_points += 1
 
+        show ratx at right
+        rat "В 21:30."
+        hide ratx
+
+        oleg "Ладно, заболтался я тут. Пойду вернусь к работе, а то много дел навалилось."
+
+        hide rat
+        $ renpy.pause(1.0)
+        rat "Кто оставил кофе на моем столе?!"
 
     ### еще одна сцена в офисе
     scene black_screen with fade
     play sound pechatdate
     centered "{color=#00ff00}13 сентября 2002 года, 14:00{/color}"
-    #
-    #
+    
+    scene office2 with fade
 
-    ### фрагмент последней сцены с боссом
+    oleg_thoughts "(Ладно, мне стоит пойти немного 'поработать')"
+
+    scene black_screen with fade
+    show text "Спустя 10 минут"
+    $ renpy.pause(1.0)
+    
+    scene office2 with fade
+
+    show active at right with dissolve
+    show activex at right
+    active "Толя, как ты посмел! Я все знаю!"
+    hide activex
+
+    show clown at left with dissolve
+    clown "..."
+    show clownx at left
+    clown "Эм... Что ты имеешь в виду?"
+    hide clownx
+
+    show activex at right
+    active "Мы же договаривались вчера сыграть в Counter Strike!"
+    active "А ты так и не зашел!"
+    hide activex
+
+    clown "..."
+    show clownx at left
+    clown "А, ты про это?"
+    clown "Я вчера весь вечер был тут. Разгребал деловые завалы всякие."
+    hide clownx
+
+    if active_points >= 1:
+        show activex at right
+        active "Олег, давай лучше с тобой сыграем в Counter Strike?"
+        active "А то Толю никогда не дождешься!"
+        hide activex
+
+        oleg "Извини, не могу. Я занятой человек, мне тут еще крота надо поймать."
+
+        show activex at right
+        active "Что? Какого еще крота?"
+        hide activex
+
+        oleg "Да на даче у меня кротов развелось, на игры времени совсем нет."
+
+        show activex at right
+        active "А, понятно. Ну, будет желание, присоединяйся. Я обычно в 9-10 часов вечера захожу в Counter Strike."
+        hide activex
+
+        clown "..."
+        oleg "Понятно. Будет свободное время - обязательно присоединюсь."
+    else:
+        show activex at right
+        active "Ну сегодня-то ты хоть пойдешь в Counter Strike?"
+        hide activex
+
+        show clownx at left
+        clown "Посмотрим. У меня сегодня тоже куча дел."
+        clown "Скорее всего, я снова задержусь допоздна."
+        hide clownx
+
+        show activex at right
+        active "Понятно все с тобой. Придется искать кого-нибудь другого, с кем можно будет поиграть."
+        hide activex
+
+    scene black_screen with fade
+    oleg_thoughts "(Надеюсь, сегодняшний день прошел не зря)"
+
+    ### last scene with boss
     scene black_screen with fade
     play sound pechatdate
     centered "{color=#00ff00}13 сентября 2002 года, 19:30{/color}"
 
-    with fade
-
     oleg "Это запись с камеры видеонаблюдения?"
+
+    scene boss_office with fade
+    
+    show boss with dissolve
+    show bossx 
     boss "Именно. Вчера в 21:32, кто-то залез в компьютер Сергея."
     boss "Мы решили посмотреть запись с камеры, установленной в офисе, чтобы убедиться в том, что это именно он."
     boss "Однако, как Вы можете видеть, на этой записи видно только как некто подходит к его компьютеру и начинает что-то в нем делать."
-    boss "Мы не можем быть на 100 процентов уверены, что это Сергей. Вчера, когда я уходил, все четверо подозреваемых были в офисе."
+    boss "Мы не можем быть на 100 процентов уверены, что это Сергей. Вчера, когда я уходил в 7 вечера, все четверо подозреваемых были в офисе."
+    hide bossx
+    $ renpy.pause(1.0) 
+    with fade
+    show bossx
     boss "Расследование уже слишком затянулось, Олег Евгеньевич."
     boss "Сами понимаете, в любое время информатор может понять, что он под наблюдением, и тогда операция сорвется."
     boss "Более того, мы не может допустить еще одну утечку данных, это принесет необратимый ущерб компании."
-    boss "Поэтому, больше у нас нет времени ждать, вы должны назвать мне имя человека, который, по вашему мнению, является кротом."
-    boss "У вас есть время подумать до завтрашнего утра. Надеюсь, у вас достаточно собранных сведений для того, чтобы сделать правильный выбор."
+    boss "Поэтому больше у нас нет времени ждать, вы должны назвать мне имя человека, который, по вашему мнению, является кротом."
+    boss "У вас есть время подумать до завтрашнего утра. Надеюсь, у вас достаточно собранных сведений, чтобы сделать правильный выбор."
+    boss "Жду вас завтра в моем офисе в 8 утра."
+    hide bossx 
 
     hide boss with moveoutleft
 
-    oleg_thoughts "Пиздец..."
+    oleg_thoughts "(Да уж... От этого решения будет зависеть моя дальнейшая карьера в этой компании)"
+
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}13 сентября 2002 года, 20:30{/color}"
+
+    scene home with fade
+
+    oleg_thoughts "(Денек, конечно, не из легких выдался)"
+    oleg_thoughts "(Завтра предстоит сделать сложный выбор)"
+    oleg_thoughts "(А сейчас стоит немного отдохнуть...)"
+
+    jump fourth_day
+
+label fourth_day:
+
+    ###
+    # DAY 4
+    ###
+
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}14 сентября 2002 года, 6:00{/color}"
+
+    scene home with fade
+
+    oleg_thoughts "(Мне так и не удалось спокойно поспать...)"
+    oleg_thoughts "(Я всю ночь размышлял о том, кто же стоит за всем этим)"
+    oleg_thoughts "(Все равно заснуть не могу. Пойду на работу, что поделать)"
+
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}14 сентября 2002 года, 7:00{/color}"
+
+    scene office2 with fade
+    $ renpy.pause(1.0)
+    scene office with fade
+    $ renpy.pause(1.0)
+
+    oleg_thoughts "(Похоже, никто еще не пришел...)"
+    oleg_thoughts "(Пожалуй, подожду Ивана Михайловича около его кабинета)"
+
+    with vpunch
+    with hpunch
+
+    show rat with dissolve
+
+    if rat_points >= 1:
+        show ratx
+        rat "Доброе утро, Олег Евгеньевич. Не ожидал увидеть Вас тут в такое раннее время."
+        hide ratx
+
+        oleg "Да вот, решил прийти пораньше."
+        oleg "Что-то я сегодня вообще не выспался. Пойду приготовлю себе кофе. Тебе взять?"
+
+        show ratx
+        rat "Нет, спасибо. Я не любитель кофе. У меня аллергия на кофеин."
+        hide ratx
+    else:
+        show ratx
+        rat "Не ожидал увидеть Вас тут в такое раннее время."
+        hide ratx
+
+        oleg "Да вот, решил прийти пораньше."
+        oleg "Что-то я сегодня вообще не выспался. Пойду приготовлю себе кофе. Тебе взять?"
+
+        show ratx
+        rat "Если я захочу, я сам себе могу взять кофе."
+        hide ratx
+
+    oleg "Ух ты, ничего себе. Ну, тогда я пошел."
+
+    hide rat with dissolve
+
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}14 сентября 2002 года, 8:00{/color}"
+
+    scene boss_office with fade
+
+    show boss with dissolve
+
+    show bossx
+    boss "Доброе утро, Олег Евгеньевич."
+    boss "Вы же понимаете, что пришло время делать выбор?"
+    boss "Надеюсь, Вы тщательно проанализировали все факты."
+    boss "Кто из моих подчиненных является информатором?"
+    hide bossx
+
+    oleg "Все улики указывают на:"
+    menu:
+        "Сергея":
+            oleg "Все улики указывают на Сергея!"
+            jump fail
+        "Анатолия":
+            oleg "Все улики указывают на Анатолия!"
+            jump success
+        "Геннадия":
+            oleg "Все улики указывают на Геннадия!"
+            jump fail
+        "Екатерину":
+            oleg "Все улики указывают на Екатерину!"
+            jump fail
+    
+    show bossx
+    boss "Я Вас понял."
+    boss "Будут приняты все необходимые меры."
+    boss "Надеюсь, Вы не ошиблись в своих суждениях."
+    hide bossx
+
+label fail:
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}21 сентября 2002 года, 22:00{/color}"
+
+    scene home with fade
+
+    "Телефон" "*бип-бип*"
+
+    oleg_thoughts "(Неизвестный номер... Интересно, кто бы это мог быть?)"
+    oleg_thoughts "(Мне обычно никто не звонит на службный телефон в такое позднее время)"
+
+    "Абонент" "Я разговариваю с Олегом Евгеньевичем?"
+
+    oleg "Я слушаю."
+
+    "Абонент" "Можете приходить за своей трудовой книжкой."
+    "Абонент" "Думаю, Вы уже поняли, что Вы наделали?"
+
+    oleg "..."
+    oleg "Я ошибся?" 
+
+    "Абонент" "..."
+
+    "Телефон" "*бип-бип*"
+
+    scene black_screen with fade
+    play music fon
+    $ renpy.pause(5.0)
+
+label success:
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}21 сентября 2002 года, 22:00{/color}"
+
+    scene home with fade
+
+    "Телефон" "*бип-бип*"
+
+    oleg_thoughts "(Иван Михайлович? Зачем ему звонить мне в такое позднее время?)"
+
+    "Иван Михайлович" "Добрый вечер, Олег Евгеньевич."
+
+    oleg "Здравствуйте, Иван Михайлович. Как у Вас дела. Утечки данных прекратились?"
+
+    "Иван Михайлович" "Зайдите завтра ко мне в офис. У нас есть что обсудить."
+
+    oleg "Не вопрос."
+
+    oleg_thoughts "(Не уж что я ошибся?!)"
+
+    scene black_screen with fade
+    play sound pechatdate
+    centered "{color=#00ff00}22 сентября 2002 года, 8:45{/color}"
+
+    scene boss_office with fade
+
+    show boss with dissolve
+    show bossx
+    boss "Здравствуйте, Олег Евгеньевич."
+    hide bossx
+
+    oleg "Иван Михайлович."
+
+    boss "..."
+    show bossx
+    boss "Ну чего Вы такой хмурый, Олег Евгеньевич!"
+    boss "Поздравляю Вас! Вы сумели вычислить информатора."
+    hide bossx
+
+    oleg_thoughts "(Сумел?..)"
+
+    show bossx
+    boss "Я, честно говоря, вообще не ожидал, что им окажется Анатолий."
+    boss "Оказывается, все это время за маской добродушного весельчака скрывался расчетливый злодей. Никогда бы не подумал на него."
+    hide bossx
+
+    $ renpy.pause(1.0)
+
+    show bossx
+    boss "Ладно, хватит о плохом. Я уже переговорил с некоторыми представителями высшего руководства."
+    boss "За Ваши заслуги перед фирмой Вас в скором времени повысят!"
+    boss "Примите мои поздравления!"
+    hide bossx
+
+    scene black_screen with fade
+    play music chinese
+    $ renpy.pause(5.0)
+
+label credits:
+
+    ###
+    # CREDITS
+    ###
+
+    show text "{size=+20}Fire Balls{/size}" with dissolve
+    $ renpy.pause(3.0)
+    hide text with dissolve
+
+    show text "{size=+10}Teamlead:   Антон Ковальский\nAnalyse:  Роман Васильев\n Design:   Софья Удовенко{/size}" with dissolve
+    $ renpy.pause(2.0)
+    hide text with dissolve
+
+    show text "{size=+10}Sound design:   Иван Михайлович Металин{/size}" with dissolve
+    $ renpy.pause(3.5)
+    hide text with dissolve
+
+    show text "{size=+10}Programming:   Андрей Викторович Кремлев\n                 Антон Павлович Фадеев\n                      Иван Михайлович Металин{/size}" with dissolve
+    $ renpy.pause(3.5)
+    hide text with dissolve
+
+    show text "{size=+10}Script:   Антон Павлович Фадеев\n                    Андрей Викторович Кремлев{/size}" with dissolve
+    $ renpy.pause(3.5)
+    hide text with dissolve
+
+    show text "{size=+10}Executive Director:   Антон Павлович Фадеев{/size}" with dissolve
+    $ renpy.pause(4.0)
+    hide text with dissolve
+
+    show text "{size=+10}Executive Director:   Иван Михайлович Металин{/size}" with dissolve
+    $ renpy.pause(4.0)
+    hide text with dissolve
+
+    show text "{size=+10}Executive Director:   Андрей Викторович Кремлев{/size}" with dissolve
+    $ renpy.pause(4.0)
+    hide text with dissolve
 
     #outro
     show radik with fade
-    show shelby with dissolve
-    shelb "La commedia e finita."
+    show shelby at left with dissolve
+    show snop at right with dissolve
+    shelb "La commedia..."
+    snop "...e finita"
 
     return

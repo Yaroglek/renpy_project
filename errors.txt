@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 61: expected end of line
-    stop music with fade
-               ^
+File "game/script.rpy", line 685: expected statement.
+    renpy.pause(1.0)
+                    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Jan  2 21:07:56 2023
+Wed Jan  4 23:22:55 2023

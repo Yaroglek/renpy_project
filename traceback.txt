@@ -1,40 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 83, in script
-    play music chinese
-  File "renpy/common/000statements.rpy", line 123, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "game/script.rpy", line 83, in <module>
-    play music chinese
-NameError: name 'chinese' is not defined
+  File "game/script.rpy", line 198, in script
+    clowm "Ну я пошел. Еще увидимся!"
+Exception: Sayer 'clowm' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 83, in script
-    play music chinese
-  File "C:\Novels\renpy\ast.py", line 2232, in execute
-    self.call("execute")
-  File "C:\Novels\renpy\ast.py", line 2220, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Novels\renpy\statements.py", line 281, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 123, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 32, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "C:\Novels\renpy\python.py", line 1092, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Novels\renpy\python.py", line 1085, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 83, in <module>
-    play music chinese
-NameError: name 'chinese' is not defined
+  File "game/script.rpy", line 198, in script
+    clowm "Ну я пошел. Еще увидимся!"
+  File "E:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "E:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'clowm' is not defined.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Детективные изыскания Олега Евгеньевича 1.0
-Mon Jan  2 21:04:53 2023
+Wed Jan  4 23:25:01 2023
