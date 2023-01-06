@@ -63,7 +63,7 @@ label start:
     $ renpy.pause(2.0)
     hide text with dissolve
     $ renpy.pause(0.5)
-    show text '{size=+20}"Крот"{/size}' with dissolve
+    show text '{size=+20}"Детективные изыскания Олега Евгеньевича"{/size}' with dissolve
     $ renpy.pause(3.0)
     stop music
     hide text with fade
@@ -549,7 +549,7 @@ label second_day:
             $ worker_points += 1
 
     oleg_thoughts "(Да уж, не самая приятная беседа получилась)"
-    oleg '(Ну, всякое бывает. Пожалуй, стоит пойти "поработать", чтобы ни у кого не было вопросов ко мне)'
+    oleg_thoughts '(Ну, всякое бывает. Пожалуй, стоит пойти "поработать", чтобы ни у кого не было вопросов ко мне)'
     hide worker
     ### home scene
     scene black_screen with fade
